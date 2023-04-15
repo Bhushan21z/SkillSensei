@@ -22,7 +22,7 @@ import logo from "./Assets/logo.png";
 
 const btn = {
   marginRight: "20px",
-  color: "black",
+  color: "white",
   backgroundColor: "transparent",
   height: "40px",
   width: "auto",
@@ -33,7 +33,7 @@ const btn = {
 };
 const styles = {
   AppBar: {
-    backgroundColor: "#E5E5E5",
+    backgroundColor: "#000",
     width: "100%",
     height: "auto",
     py: "1px",
@@ -50,7 +50,7 @@ const styles = {
     textTransform: "none",
     fontFamily: "Figtree",
     // lineHeight: "29px",
-    color: "#000000",
+    color: "#fff",
   },
   btn: {
     my: 2,
@@ -121,18 +121,17 @@ export default function Appbar(props) {
         component="nav"
         position="fixed"
         sx={{
-          backgroundColor: "transparent",
-          height: "180px",
+         backgroundColor:"transparent",
           boxShadow: "none",
         }}
       >
         <Toolbar
           sx={{
             m: 2,
-            backgroundColor: "#FAFAFF",
+            backgroundColor: "#1f1f1f",
             borderRadius: "10px",
             py: 1,
-            boxShadow: "1px 1px 1px 1px #DADDD8",
+            // boxShadow: "1px 1px 1px 1px #F9A826",
           }}
         >
           {/* Drawer for Mobile View */}
@@ -148,7 +147,7 @@ export default function Appbar(props) {
                 lg: "none",
                 xl: "none",
               },
-              color: "black",
+              color: "white",
             }}
           >
             <Grid container xs={12}>
@@ -158,7 +157,7 @@ export default function Appbar(props) {
               <Grid xs={11}>
                 <Typography
                   sx={{
-                    color: "black",
+                    color: "white",
                     fontWeight: 600,
                     width: "auto",
                   }}

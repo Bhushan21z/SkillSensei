@@ -1,4 +1,4 @@
-import { Button, Grid , Typography} from "@mui/material";
+import { Button, Grid , Typography, Modal, Box} from "@mui/material";
 import React from "react";
 import Navbar from "../Components/Navbar";
 import { useNavigate } from "react-router-dom";
@@ -6,14 +6,84 @@ import getCookie from "../hooks/getCookie";
 import setCookie from "../hooks/setCookie";
 import removeCookie from "../hooks/removeCookie";
 import axios from "axios";
+import Lottie from "react-lottie";
+import animationData from "../Components/Assets/level1.json";
+import { useState, useEffect } from "react";
 
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
+
+const buttons = { margin: "8px", backgroundColor: "#1D3557" };
+const text = { padding: 2, margin: "3px 0" };
+
+var modalText = "Try harder";
 
 const Homepage = () => {
     const navigate = useNavigate();
+
+    ////////////// Time Function
+    const d = new Date();
+    let time = d.getTime();
+    let level1time= getCookie("level1");
+    if(!level1time){
+      let cookieState={
+        startTime: time,
+        endTime: 0
+      }
+      setCookie("level1", JSON.stringify(cookieState));
+    }
+    //const [time, setTime] = useState(0);
+
+    // useEffect(() => {
+    //   setTimeout(() => {
+    //     setCount((count) => count + 1);
+    //   }, 1000);
+    // });
+
+    const [open, setOpen] = useState(false);
+  const [lastpage, setLastpage] = useState("/level1");
+  const [message, setMessage] = useState("Retry");
+  const handleOpen = () => {
+    setOpen(true);
+    let login = getCookie("login");
+    if(login){
+      modalText="Congratulations";
+      setMessage("Proceed");
+    }
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
     const checkComplete = ()=>{
         let login = getCookie("login");
+        
         if (login) {  
-            let loginp= JSON.parse(login);
+          let loginp= JSON.parse(login);
+          /// calculate time
+          const d = new Date();
+          let time = d.getTime();
+          let getstarttime=getCookie("level1");
+          let getstarttimep=JSON.parse(getstarttime);
+          let totalTime= time-getstarttimep.startTime;
+          removeCookie("level1");
+          let cookieStatetime={
+            startTime: getstarttimep.startTime,
+            endTime: time
+          }
+          setCookie("level1", JSON.stringify(cookieStatetime));
+          console.log(totalTime);
+          ///////
             const cookieState = {
                 email: loginp.email,
                 password: loginp.password,
@@ -22,7 +92,7 @@ const Homepage = () => {
               };
               removeCookie("login");
               setCookie("login", JSON.stringify(cookieState));
-              axios.post("http://localhost:8000/api/game/level1", {email:loginp.email})
+              axios.post("http://localhost:8000/api/game/level1", {email:loginp.email, complete: true, endtime:totalTime})
               .then((response) => {
                 console.log(response);
               })
@@ -32,10 +102,21 @@ const Homepage = () => {
           console.log("Success");
           navigate("/level2");
         } else {
-            console.log("Retry");
-          //navigate("Retry");
+            
+          console.log("Retry");
+          window.location.reload();
         }
     }
+
+    const defaultOptions = {
+      loop: true,
+      autoplay: true,
+      animationData: animationData,
+      rendererSettings: {
+        preserveAspectRatio: "xMidYMid slice",
+      },
+    };
+    
   return (
     <div>
       <Navbar />
@@ -43,15 +124,54 @@ const Homepage = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        backgroundColor:"#000",
+        
       }} >
        
+       <Grid item sx={{
+
+        p:5,
+        borderRadius:"20px",
+        border:"2px solid #F9A826",
+        marginTop:"50px"
+       }} >
+       <Lottie options={defaultOptions} height={350} width={800} />
        <Typography sx={{
           fontSize: "2rem",
+          color:"#F9A826"
        }} > You Know What to Do to Proceed</Typography>
 
-        <Button variant="contained" sx={{ marginTop: "2rem" }} onClick={checkComplete}>
+        <Button variant="contained" sx={{ marginTop: "2rem" }} onClick={handleOpen}>
         Next Level
       </Button>
+      </Grid>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            {modalText}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            {/* <Link
+                style={{ textDecoration: "None", color: "black" }}
+                to={lastpage}
+              > */}
+            <Button
+              onClick={checkComplete}
+              style={buttons}
+              variant="contained"
+              color="primary"
+            >
+              {message}
+            </Button>
+            {/* </Link> */}
+          </Typography>
+        </Box>
+      </Modal>
       </Grid>
    
     </div>
