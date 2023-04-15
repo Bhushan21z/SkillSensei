@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import getCookie from "../hooks/getCookie";
 import removeCookie from "../hooks/removeCookie";
-import logo from "./Assets/logo.png";
+import logo from "./Assets/ninja.png";
 
 const btn = {
   marginRight: "20px",
@@ -39,8 +39,8 @@ const styles = {
     py: "1px",
   },
   logo: {
-    width: "50px",
-    height: "50px",
+    width: "80px",
+    height: "80px",
     px: 1,
   },
   menutext: {

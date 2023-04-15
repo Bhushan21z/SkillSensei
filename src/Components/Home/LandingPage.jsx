@@ -28,8 +28,13 @@ const LandingPage = () => {
       if (login) {
         let loginparse = JSON.parse(login);
         const level="/level"+loginparse.level
-        console.log(loginparse.level);
+        if(loginparse.level==6){
+          navigate("/scoreboard");
+        }
+        else{
+          console.log(loginparse.level);
         navigate(level);
+        }
       } else {
         navigate("/level1");
       }
