@@ -1,6 +1,7 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import { useNavigate } from "react-router-dom";
 import {
   ButtonGroup,
   Grid,
@@ -70,10 +71,21 @@ const styles = {
 const buttons = ["LeaderBoard", "Login", "Register"];
 let token = getCookie("login");
 let username = "";
+let email="";
 if (token) {
   username = JSON.parse(getCookie("login")).username;
+  email = JSON.parse(getCookie("login")).email;
 }
 console.log(username);
+
+const handleOpen = () => {
+  navigate("/scoreboard",
+  {
+      state: {
+          email: props.row.email
+      },
+  });
+}
 
 const logout = () => {
   let token = getCookie("login");
@@ -83,12 +95,21 @@ const logout = () => {
   }
 };
 export default function Appbar(props) {
+  const navigate = useNavigate();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const openScoreboard = () => {
+    navigate("/scoreboard",
+    {
+        state: {
+            email: email
+        },
+    });
+  }
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", m: 2 }}>
@@ -131,7 +152,7 @@ export default function Appbar(props) {
             backgroundColor: "#1f1f1f",
             borderRadius: "10px",
             py: 1,
-            // boxShadow: "1px 1px 1px 1px #F9A826",
+            boxShadow: "1px 1px 1px 1px #F9A826",
           }}
         >
           {/* Drawer for Mobile View */}
@@ -207,12 +228,12 @@ export default function Appbar(props) {
                 <Button sx={btn} onClick={logout}>
                   Logout
                 </Button>
-                <Link
+                {/* <Link
                   to="/scoreboard"
                   style={{ textDecoration: "none", color: "black" }}
-                >
-                <Button sx={btn}>{username}</Button>
-                </Link>
+                > */}
+                <Button sx={btn} onClick={openScoreboard}>{username}</Button>
+                {/* </Link> */}
               </ButtonGroup>
             )}
           </Grid>
