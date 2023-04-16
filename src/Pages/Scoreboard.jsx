@@ -13,8 +13,8 @@ const ScoreBoard = () => {
 
   const [data, setData]= useState({});
 
-  const getData = ()=>{
-    axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/scoreboard", {email:email})
+  const getData = async ()=>{
+    await axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/scoreboard", {email:email})
               .then((response) => {
                 console.log(response);
                 setData(response.data.allData);

@@ -39,7 +39,7 @@ const score = (props) => {
   // const series=[100, 255, 41, 17, 15];
   let levelstr="You are on Level"+data.level+" Complete Game to see your Rank";
   if(data.level==6){
-    levelstr=" Your Rank is #"+data.rank;
+    levelstr=" Leaderboard Rank is #"+data.rank;
   }
   console.log(levelstr);
   console.log(timedata);
