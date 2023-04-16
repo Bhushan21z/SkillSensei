@@ -26,6 +26,9 @@ const textfield = {
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
     borderColor: "white",
   },
+  "& .MuiOutlinedInput-input": {
+    color: "white",
+  },
   m: 1,
 };
 
@@ -115,7 +118,7 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Success");
-        modalText="Congratulations";
+        modalText="Congratulations!! You Completed Skill Test by our Sensei, Proceed to know your Score and don't forget to check LeaderBoard too.";
         setMessage("Proceed");
         setLastpage("/scoreboard");
         }

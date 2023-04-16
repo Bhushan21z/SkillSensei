@@ -46,13 +46,13 @@ const LeaderBoard = () => {
       <Grid container xs={12} sx={{
         justifyContent: "center",
         alignItems: "center",
-        height: "100vh",
+        height: "auto",
         backgroundColor:"#000",
-        
+        paddingTop:"10vh"
       }} >
 
       <Grid item sx={{
-        marginRight:"100px"
+        marginRight:"100px",
       }}>
       
        <img

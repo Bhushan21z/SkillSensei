@@ -26,6 +26,9 @@ const textfield = {
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
     borderColor: "white",
   },
+  "& .MuiOutlinedInput-input": {
+    color: "white",
+  },
   m: 1,
 };
 

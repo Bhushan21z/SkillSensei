@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import { useLocation } from 'react-router-dom'
+import Score from "../Components/score";
 
 
 const ScoreBoard = () => {
@@ -9,6 +10,7 @@ const ScoreBoard = () => {
   return (
     <div>
       <Navbar />
+     <Score  />
 
     </div>
   );

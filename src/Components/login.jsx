@@ -35,9 +35,15 @@ const style = {
 };
 const textfield = {
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black",
+    borderColor: "white", 
   },
+
+  "& .MuiOutlinedInput-input": {
+    color: "white",
+  },
+
   m: 1,
+  color: "white",
 };
 const btn = {
   height: 70,
@@ -148,6 +154,7 @@ class Signin extends Component {
           height: "100vh",
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: "#000",
         }}
       >
         {/* ----------- left grid---------------- */}
@@ -163,14 +170,14 @@ class Signin extends Component {
             },
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#ffffff",
+            backgroundColor: "#000",
             height: "100vh",
             p: 4,
           }}
         >
-          <Typography variant="h3" style={{ color: "black", textAlign: "right" }}>
+          <Typography variant="h3" style={{ color: "white", textAlign: "right" }}>
           Join Us!! <br />
-          <span style={{ color: "#F9A826" }}>Explore the Ninja World with our Sensei </span>  <br />
+          <span style={{ color: "#F9A826" }}>Explore the Skill World with our Sensei </span>  <br />
         </Typography>
         </Grid>
 
@@ -186,15 +193,17 @@ class Signin extends Component {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#ffffff",
+            backgroundColor: "#000",
+            marginTop:"3rem",
             p: 5,
+            border : "1px solid #F9A826",
           }}
         >
           <Grid item>
             <Typography
               variant="h4"
               sx={{
-                color: "black",
+                color: "white",
                 fontWeight: "bold",
                 textAlign: "center",
                 m: 2,
@@ -209,7 +218,7 @@ class Signin extends Component {
                 value={email}
                 fullWidth
                 label={
-                  <Typography style={{ color: "black" }}>
+                  <Typography style={{ color: "white" }}>
                     Enter your email
                   </Typography>
                 }
@@ -222,7 +231,7 @@ class Signin extends Component {
                 value={password}
                 fullWidth
                 label={
-                  <Typography style={{ color: "black" }}>
+                  <Typography style={{ color: "white" }}>
                     Enter your password
                   </Typography>
                 }

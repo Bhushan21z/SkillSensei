@@ -8,7 +8,6 @@ const Signup = () => {
     <div>
       <Navbar />
       <SignupPage />
-      <Footer />
     </div>
   );
 };

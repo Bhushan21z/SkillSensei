@@ -17,6 +17,15 @@ import Level6 from "./Pages/Level6";
 const App = () => {
   return (
     <div>
+      {/* // Music */}
+      <audio autoPlay loop> 
+        <source 
+          source="https://www.bensound.com/bensound-music/bensound-summer.mp3"
+        type="audio/mpeg" 
+        />
+
+        </audio>
+    
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
@@ -30,6 +39,7 @@ const App = () => {
         <Route path="/level5" element={<Level5 />} />
         <Route path="/level6" element={<Level6 />} />
       </Routes>
+   
     </div>
   );
 };

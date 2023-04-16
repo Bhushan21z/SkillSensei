@@ -3,7 +3,7 @@ import { Grid, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 // import gif from "../Assets/gif.gif";
 import Lottie from "react-lottie";
-import animationData from "../Assets/black-ninja.json";
+import animationData from "../Assets/ninja1.json";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import getCookie from "../../hooks/getCookie";

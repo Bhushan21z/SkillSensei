@@ -200,24 +200,27 @@ export default function Appbar(props) {
               display: { xs: "none", sm: "none", md: "flex" },
             }}
           >
-            <>
+        
               <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                <Grid container xs={12}>
                 <img src={logo} alt="logo" style={{ height: "50px" }} />
-              </Link>
-            </>
-            <Typography
+                <Typography
                   sx={{
                     color: "white",
                     fontWeight: 600,
                     fontSize: 30,
                     width: "auto",
-                    marginLeft:"-880px"
+                    ml: 2,
                   }}
                 >
                   Skill
                   <span style={{ color: "#F9A826" }}>Sensei</span>
+
             </Typography>
+            </Grid>
+              </Link>
             
+          
 
             {!token ? (
               <ButtonGroup variant="text">

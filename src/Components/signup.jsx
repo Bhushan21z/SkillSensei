@@ -16,14 +16,17 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "2px solid #fff",
   boxShadow: 24,
   p: 4,
 };
 
 const textfield = {
   "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
-    borderColor: "black",
+    borderColor: "white",
+  },
+  "& .MuiOutlinedInput-input": {
+    color: "white",
   },
   m: 1,
 };
@@ -98,6 +101,7 @@ function Signup() {
         height: "100vh",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#000",
       }}
     >
       {/* -------------------------left grid------------------- */}
@@ -113,14 +117,14 @@ function Signup() {
           },
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#000",
           height: "100vh",
           p: 4,
         }}
       >
-        <Typography variant="h3" style={{ color: "black", textAlign: "right" }}>
+        <Typography variant="h3" style={{ color: "white", textAlign: "right" }}>
           Join Us!! <br />
-          <span style={{ color: "#F9A826" }}>Explore the Ninja World with our Sensei </span>  <br />
+          <span style={{ color: "#F9A826" }}>Explore the Skill World with our Sensei </span>  <br />
         </Typography>
         
       </Grid>
@@ -136,7 +140,8 @@ function Signup() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#000",
+          border : "1px solid #F9A826",
           p: 5,
         }}
       >
@@ -144,7 +149,7 @@ function Signup() {
           <Typography
             variant="h4"
             sx={{
-              color: "black",
+              color: "white",
               fontWeight: "bold",
               textAlign: "center",
               m: 2,
@@ -159,7 +164,7 @@ function Signup() {
               name="name"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>Full Name</Typography>
+                <Typography style={{ color: "white" }}>Full Name</Typography>
               }
               sx={textfield}
             />
@@ -170,7 +175,7 @@ function Signup() {
               name="email"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>
+                <Typography style={{ color: "white" }}>
                   Email Address
                 </Typography>
               }
@@ -183,7 +188,7 @@ function Signup() {
               type="password"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>Password</Typography>
+                <Typography style={{ color: "white" }}>Password</Typography>
               }
               sx={textfield}
             />
@@ -194,7 +199,7 @@ function Signup() {
               type="password"
               fullWidth
               label={
-                <Typography style={{ color: "black" }}>
+                <Typography style={{ color: "white" }}>
                   Confirm Password
                 </Typography>
               }
