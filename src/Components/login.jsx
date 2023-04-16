@@ -168,13 +168,10 @@ class Signin extends Component {
             p: 4,
           }}
         >
-          <Typography
-            variant="h3"
-            style={{ color: "black", textAlign: "right" }}
-          >
-            Join Us! <br />
-            Explore the world of Technologies <br />
-          </Typography>
+          <Typography variant="h3" style={{ color: "black", textAlign: "right" }}>
+          Join Us!! <br />
+          <span style={{ color: "#F9A826" }}>Explore the Ninja World with our Sensei </span>  <br />
+        </Typography>
         </Grid>
 
         {/* ------------------------------------------------ */}
