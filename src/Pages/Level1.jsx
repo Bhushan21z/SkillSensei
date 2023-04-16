@@ -25,7 +25,7 @@ const style = {
 const buttons = { margin: "8px", backgroundColor: "#1D3557" };
 const text = { padding: 2, margin: "3px 0" };
 
-var modalText = "Try harder";
+var modalText = "You should Do Something First !!";
 
 const Homepage = () => {
     const navigate = useNavigate();
@@ -51,13 +51,13 @@ const Homepage = () => {
 
     const [open, setOpen] = useState(false);
   const [lastpage, setLastpage] = useState("/level1");
-  const [message, setMessage] = useState("Retry");
+  const [message, setMessage] = useState("Try Again");
   const handleOpen = () => {
     setOpen(true);
     let login = getCookie("login");
     if(login){
-      modalText="Congratulations";
-      setMessage("Proceed");
+      modalText="Good Work !!! Registering is the Most Important Thing.";
+      setMessage("Next Level");
     }
   };
   const handleClose = () => {
@@ -92,7 +92,7 @@ const Homepage = () => {
               };
               removeCookie("login");
               setCookie("login", JSON.stringify(cookieState));
-              axios.post("http://localhost:8000/api/game/level1", {email:loginp.email, complete: true, endtime:totalTime})
+              axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level1", {email:loginp.email, complete: true, endtime:totalTime})
               .then((response) => {
                 console.log(response);
               })
@@ -139,7 +139,7 @@ const Homepage = () => {
        <Typography sx={{
           fontSize: "2rem",
           color:"#F9A826"
-       }} > You Know What to Do to Proceed</Typography>
+       }} > You Know What to Do to Proceed !!!</Typography>
 
         <Button variant="contained" sx={{ marginTop: "2rem" }} onClick={handleOpen}>
         Next Level

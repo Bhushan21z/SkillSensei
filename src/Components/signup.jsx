@@ -66,7 +66,7 @@ function Signup() {
     if (password === cpassword) {
       await axios
         .post(
-          "http://localhost:8000/api/user/signup",
+          "https://good-tan-wasp-slip.cyclic.app/api/user/signup",
           form_data
         )
         .then((response) => {

@@ -84,11 +84,13 @@ function RowTable (props){
 export default function CustomizedTables() {
 
     const [data, setData]= useState([]);
+    const minute = 1000 * 60;
+    const hour = minute * 60;
     useEffect(() => {
       getData();
     },data);
     const getData = ()=>{
-        axios.get("http://localhost:8000/api/game/leaderboard")
+        axios.get("https://good-tan-wasp-slip.cyclic.app/api/game/leaderboard")
         .then((response) => {
           console.log(response.data.data);
           setData(response.data.data);
@@ -114,7 +116,7 @@ export default function CustomizedTables() {
             <StyledTableRow>
             <StyledTableCell> {row.rank}</StyledTableCell>
             <RowTable row={row} />
-            <StyledTableCell> {row.time}</StyledTableCell>
+            <StyledTableCell> {Math.round((row.time / 1000 / 60) % 60)} minutes</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

@@ -108,7 +108,7 @@ const navigation = () => {
             };
             removeCookie("login");
             setCookie("login", JSON.stringify(cookieState));
-            axios.post("http://localhost:8000/api/game/level4", {email:loginp.email, complete: true, endtime:totalTime})
+            axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level4", {email:loginp.email, complete: true, endtime:totalTime})
             .then((response) => {
               console.log(response);
             })
@@ -121,7 +121,7 @@ const navigation = () => {
         setLastpage("/level5");
         }
         else{
-          axios.post("http://localhost:8000/api/game/level4", {email:loginp.email, complete: false, endtime:0})
+          axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level4", {email:loginp.email, complete: false, endtime:0})
             .then((response) => {
               console.log(response);
             })

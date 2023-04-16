@@ -34,14 +34,14 @@ const textfield = {
 const buttons = { margin: "8px", backgroundColor: "#1D3557" };
 const text = { padding: 2, margin: "3px 0" };
 
-var modalText = "Try harder";
+var modalText = "Mumma is still Angry with you !!";
 
 const Homepage = () => {
 
   const navigate = useNavigate();
   const form = useRef();
   const [formitems, setItems] = useState([]);
-  let answer = ["socks","laptop","book","psp","keys","toy"];
+  let answer = ["socks","laptop","book","nintendo","keys"];
   answer.sort();
 
   ////////////// Time Function
@@ -108,7 +108,7 @@ const navigation = () => {
             };
             removeCookie("login");
             setCookie("login", JSON.stringify(cookieState));
-            axios.post("http://localhost:8000/api/game/level3", {email:loginp.email, complete: true, endtime:totalTime})
+            axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level3", {email:loginp.email, complete: true, endtime:totalTime})
             .then((response) => {
               console.log(response);
             })
@@ -116,12 +116,12 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Success");
-        modalText="Congratulations";
+        modalText="Congratulations !! Mumma is very Happy with you.";
         setMessage("Next Level");
         setLastpage("/level4");
         }
         else{
-          axios.post("http://localhost:8000/api/game/level3", {email:loginp.email, complete: false, endtime:0})
+          axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level3", {email:loginp.email, complete: false, endtime:0})
             .then((response) => {
               console.log(response);
             })
@@ -129,7 +129,7 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Try Again");
-        modalText="Wrong Answer";
+        modalText="Mumma is still Angry with you !!";
         setMessage("Try Again");
         }
         handleOpen();
@@ -168,13 +168,28 @@ const navigation = () => {
         p:5,
         borderRadius:"20px",
         border:"2px solid #F9A826",
-        marginTop:"50px"
+        marginTop:"100px"
        }} >
-       <Lottie options={defaultOptions} height={350} width={800} />
+       {/* <Lottie options={defaultOptions} height={350} width={800} /> */}
+       <Grid item sx={{
+         height: 400,
+         width:1000
+       }}>
+       <img
+            src="https://user-images.githubusercontent.com/82889656/232274381-de99434a-3e08-47a6-bdb6-235751312503.jpg"
+            alt="image"
+            height={400}
+            width={1000}
+       />
+       </Grid>
        <Typography sx={{
-          fontSize: "2rem",
+          fontSize: "1.5rem",
           color:"#F9A826"
-       }} > Mumma wants you to clean your Room. List down all things that are not in its place.</Typography>
+       }} >Mumma wants you to clean your Room. List down all things that are not in its place.</Typography>
+       <Typography sx={{
+          fontSize: "1rem",
+          color:"#fff"
+       }} >(Write each item as it is called and all in lowercase)</Typography>
 
       <form ref={form} onSubmit={checkComplete}>
       <MultipleValueTextInput
@@ -191,7 +206,7 @@ const navigation = () => {
 	      name="items"
 	      placeholder="Enter Items"
       />
-        <Button variant="contained" sx={{ marginTop: "2rem" }} type="submit">
+        <Button variant="contained" sx={{ marginTop: "1rem", marginBottom:"-2rem" }} type="submit">
         Next Level
         </Button>
       </form>

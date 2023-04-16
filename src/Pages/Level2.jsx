@@ -31,9 +31,9 @@ const textfield = {
 
 
 const buttons = { margin: "8px", backgroundColor: "#1D3557" };
-const text = { padding: 2, margin: "3px 0" };
+const text = { padding: 2, margin: "15px 0" };
 
-var modalText = "Try harder";
+var modalText = "Read Every word Carefully !!";
 
 const Homepage = () => {
 
@@ -54,7 +54,7 @@ const Homepage = () => {
 
   const [open, setOpen] = useState(false);
 const [lastpage, setLastpage] = useState("/level2");
-const [message, setMessage] = useState("Retry");
+const [message, setMessage] = useState("Try Again");
 const handleOpen = () => {
   setOpen(true);
 };
@@ -101,7 +101,7 @@ const navigation = () => {
             };
             removeCookie("login");
             setCookie("login", JSON.stringify(cookieState));
-            axios.post("http://localhost:8000/api/game/level2", {email:loginp.email, complete: true, endtime:totalTime})
+            axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level2", {email:loginp.email, complete: true, endtime:totalTime})
             .then((response) => {
               console.log(response);
             })
@@ -109,12 +109,12 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Success");
-        modalText="Congratulations";
+        modalText="Congratulations !!! Sometimes Answer is the only Answer.";
         setMessage("Next Level");
         setLastpage("/level3");
         }
         else{
-          axios.post("http://localhost:8000/api/game/level2", {email:loginp.email, complete: false, endtime:0})
+          axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/level2", {email:loginp.email, complete: false, endtime:0})
             .then((response) => {
               console.log(response);
             })
@@ -131,8 +131,9 @@ const navigation = () => {
           modalText="Login to Play";
           setMessage("Retry");
         console.log("Retry");
-        window.location.reload();
+        //window.location.reload();
         handleOpen();
+        navigate("/login");
       }
   }
 
@@ -165,13 +166,23 @@ const navigation = () => {
        }} >
        {/* <Lottie options={defaultOptions} height={350} width={800} /> */}
        <Typography sx={{
-          fontSize: "2rem",
-          color:"#F9A826"
-       }} > Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          fontSize: "1.5rem",
+          color:"#fff"
+       }} > Read the Text Carefully. 
        </Typography>
        <Typography sx={{
-          fontSize: "2rem",
+          fontSize: "1.5rem",
           color:"#F9A826"
+       }} > TOM CRUISE is a global cultural icon who has made an immeasurable impact on cinema by creating some of the most memorable characters of all time. Having achieved extraordinary success as an actor, producer and philanthropist in a career spanning over three decades, Cruise is a three-time Oscar® nominee and three-time Golden Globe Award® winner whose films have earned over $10 billion in worldwide box office—an incomparable accomplishment. Eighteen of Cruise’s films have grossed over $100 million domestically, and a record 23 have made more than $200 million globally. His latest film, Mission: Impossible – Fallout has made over $775 million worldwide becoming Cruise’s most successful film to date.
+       </Typography>
+       <Typography sx={{
+          fontSize: "1.5rem",
+          color:"#F9A826"
+       }} > What did TOM CRUISE had today in breakfast ?
+       </Typography>
+       <Typography sx={{
+          fontSize: "1.5rem",
+          color:"#fff"
        }} > Write Answer to Proceed !!!
        </Typography>
        <form ref={form} onSubmit={checkComplete}>
@@ -184,7 +195,7 @@ const navigation = () => {
               }
               sx={textfield}
         />
-        <Button variant="contained" sx={{ marginTop: "2rem" }} type="submit">
+        <Button variant="contained" sx={{ marginTop: "2rem", marginLeft:"3rem" }} type="submit">
         Next Level
       </Button>
        </form>
