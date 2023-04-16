@@ -10,6 +10,7 @@ import Lottie from "react-lottie";
 import animationData from "../Components/Assets/level1.json";
 import { useState, useEffect, useRef } from "react";
 import MultipleValueTextInput from 'react-multivalue-text-input';
+import ReactPlayer from "react-player";
 
 const style = {
   position: "absolute",
@@ -34,7 +35,7 @@ const textfield = {
 const buttons = { margin: "8px", backgroundColor: "#1D3557" };
 const text = { padding: 2, margin: "3px 0" };
 
-var modalText = "Try harder";
+var modalText = "You Choose Wrong Suspects !!";
 
 const Homepage = () => {
 
@@ -116,7 +117,7 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Success");
-        modalText="Congratulations";
+        modalText="Congratulations !! You can be a Great Detective in future";
         setMessage("Next Level");
         setLastpage("/level5");
         }
@@ -129,7 +130,7 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Try Again");
-        modalText="Wrong Answer";
+        modalText="You Choose Wrong Suspects !!";
         setMessage("Try Again");
         }
         handleOpen();
@@ -168,25 +169,26 @@ const navigation = () => {
         p:5,
         borderRadius:"20px",
         border:"2px solid #F9A826",
-        marginTop:"50px"
+        marginTop:"100px"
        }} >
-       <Lottie options={defaultOptions} height={350} width={800} />
+       {/* <Lottie options={defaultOptions} height={350} width={800} /> */}
+       <Grid item sx={{
+         height: 400,
+         width:1000,
+         marginLeft:"250px"
+       }}>
+       <ReactPlayer
+       url="https://www.youtube.com/watch?v=fgOb2Y8hQ6o" 
+       />
+       </Grid>
        <Typography sx={{
           fontSize: "2rem",
           color:"#F9A826"
-       }} > Find Out The Murderers</Typography>
-      <Typography sx={{
-          fontSize: "2rem",
-          color:"#F9A826"
-       }} > https://www.youtube.com/watch?v=fgOb2Y8hQ6o</Typography>
+       }} >Murder Mystery !! Find out the Murderers</Typography>
        <Typography sx={{
-          fontSize: "2rem",
+          fontSize: "1rem",
           color:"#fff"
-       }} > Princple  Math Teacher  Gardner Coach  </Typography>
-       <Typography sx={{
-          fontSize: "2rem",
-          color:"#fff"
-       }} > Mary  Nicolas  Johnathan  Someone Else  </Typography>
+       }} >(Mary,Nicolas,Johnathan, Someone Else) (Gardner, Math Teacher, Principal, Coach)</Typography>
 
       <form ref={form} onSubmit={checkComplete}>
       <MultipleValueTextInput
@@ -203,7 +205,7 @@ const navigation = () => {
 	      name="items"
 	      placeholder="Enter Items"
       />
-        <Button variant="contained" sx={{ marginTop: "2rem" }} type="submit">
+        <Button variant="contained" sx={{ marginTop: "1rem", marginBottom:"-2rem" }} type="submit">
         Next Level
         </Button>
       </form>

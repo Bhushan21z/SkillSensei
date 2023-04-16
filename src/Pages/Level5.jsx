@@ -1,7 +1,7 @@
 import { Button, Grid , Typography, Modal, Box, TextField} from "@mui/material";
 import React from "react";
 import Navbar from "../Components/Navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import getCookie from "../hooks/getCookie";
 import setCookie from "../hooks/setCookie";
 import removeCookie from "../hooks/removeCookie";
@@ -33,7 +33,7 @@ const textfield = {
 const buttons = { margin: "8px", backgroundColor: "#1D3557" };
 const text = { padding: 2, margin: "3px 0" };
 
-var modalText = "Try harder";
+var modalText = "Wrong answer !! You sure you are on the right Page";
 
 const Homepage = () => {
 
@@ -128,7 +128,7 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Try Again");
-        modalText="Wrong Answer";
+        modalText="Wrong answer !! You sure you are on the right Page";
         setMessage("Try Again");
         }
         handleOpen();
@@ -170,15 +170,24 @@ const navigation = () => {
         marginTop:"50px"
        }} >
        {/* <Lottie options={defaultOptions} height={350} width={800} /> */}
+       <Grid item sx={{
+         height: 350,
+         width:300,
+         marginLeft:"200px"
+       }}>
+       <Link to="https://instagram.com/skilled_sensei?igshid=OTJhZDVkZWE=">
+       <img
+            src="https://user-images.githubusercontent.com/82889656/232287650-55bcd01b-448a-4540-949c-00882cd902e9.jpeg"
+            alt="image"
+            height={350}
+            width={300}
+       />
+       </Link>
+       </Grid>
        <Typography sx={{
           fontSize: "2rem",
           color:"#F9A826"
-       }} > Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-       </Typography>
-       <Typography sx={{
-          fontSize: "2rem",
-          color:"#F9A826"
-       }} > Write Answer to Proceed !!!
+       }} > Track Down Every Page to reach Final Solution !!
        </Typography>
        <form ref={form} onSubmit={checkComplete}>
        <TextField
@@ -190,8 +199,8 @@ const navigation = () => {
               }
               sx={textfield}
         />
-        <Button variant="contained" sx={{ marginTop: "2rem" }} type="submit">
-        Next Level
+        <Button variant="contained" sx={{ marginTop: "1rem", marginLeft:"5rem" }} type="submit">
+        Finish
       </Button>
        </form>
       </Grid>

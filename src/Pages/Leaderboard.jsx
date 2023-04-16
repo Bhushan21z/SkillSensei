@@ -50,7 +50,19 @@ const LeaderBoard = () => {
         backgroundColor:"#000",
         
       }} >
-       
+
+      <Grid item sx={{
+        marginRight:"100px"
+      }}>
+      
+       <img
+            src="https://user-images.githubusercontent.com/82889656/232280407-869efdd0-75a0-47f2-93bc-1c9a41a50d89.png"
+            alt="image"
+            height={300}
+            width={200}
+       />
+      </Grid>
+      
        <Grid item sx={{
 
         p:5,
@@ -58,6 +70,11 @@ const LeaderBoard = () => {
         border:"2px solid #F9A826",
         marginTop:"50px"
        }} >
+       <Typography sx={{
+          fontSize: "1.5rem",
+          color:"#F9A826",
+          textAlign: "center"
+       }} >Leader Board</Typography>
        <NoticeFeed />
        
       </Grid>

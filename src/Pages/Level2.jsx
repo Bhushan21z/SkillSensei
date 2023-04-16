@@ -122,7 +122,7 @@ const navigation = () => {
               console.log("Error");
             });
         console.log("Try Again");
-        modalText="Wrong Answer";
+        modalText="Read Each word Carefully !!";
         setMessage("Try Again");
         }
         handleOpen();
