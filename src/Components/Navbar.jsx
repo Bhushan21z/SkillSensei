@@ -205,6 +205,19 @@ export default function Appbar(props) {
                 <img src={logo} alt="logo" style={{ height: "50px" }} />
               </Link>
             </>
+            <Typography
+                  sx={{
+                    color: "white",
+                    fontWeight: 600,
+                    fontSize: 30,
+                    width: "auto",
+                    marginLeft:"-880px"
+                  }}
+                >
+                  Skill
+                  <span style={{ color: "#F9A826" }}>Sensei</span>
+            </Typography>
+            
 
             {!token ? (
               <ButtonGroup variant="text">
