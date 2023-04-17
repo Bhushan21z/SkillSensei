@@ -54,14 +54,13 @@ Skill Sensei is a simple Soft Skill Test Fun Game. It is an innovative and engag
 - **Decision making and Deducing Test**
 - **Problem Solving and Riddle Test**
 
-
 <hr>
 
 # Puzzles and Solutions
 
     Level 1: Simple Awareness Test
      Puzzle : The must Activity you should do to Proceed in any website available.
-     
+
      Answer : Register and Login to Continue.
      (This puzzle was to make sure every user must Register to play)
 
@@ -69,7 +68,7 @@ Skill Sensei is a simple Soft Skill Test Fun Game. It is an innovative and engag
 
     Level 2: Reading Test
      Puzzle : Read each word of the whole Text given carefully and write Answer.
-     
+
      Answer : Answer
      (The Question asked was totally irrelevant but still there was answer provided in the scene)
 
@@ -77,24 +76,23 @@ Skill Sensei is a simple Soft Skill Test Fun Game. It is an innovative and engag
 
     Level 3: Observation / Responsibility Test
      Puzzle : Provided with a picture watch it carefully and list down items that are not in their right place.
-     
+
      Answer : socks, laptop, keys, nintendo, book
 
 <img alt="githubcrypt" title="githubcrypt" src="https://user-images.githubusercontent.com/82889656/232334082-705e583a-932b-48c4-87be-75e7e6e27cc2.png" >
 
     Level 4: Decision Deducing Test
      Puzzle : Watch the Youtube video provided carefully and deduce who was the murdered in the scenes.
-     
+
      Answer : Nicolas, Math Teacher
      (Chemist wrote name of his murderer through element names)
      (How was Math Teacher making mid year test on the first day of school)
 
 <img alt="githubcrypt" title="githubcrypt" src="https://user-images.githubusercontent.com/82889656/232334148-c4bd1c3f-af42-450a-9a01-7a4c5849a6d2.png" >
 
-
     Level 5: Riddles Test
      Puzzle : Starting from one Instagram post provided you need to track down 3 Instagram pages to find the Final Answer. (ig: @skilled_sensei)
-     
+
      Answer : Thank You Skill Sensei
      (First Riddle : secret  ig:@secret_secret_sss)
      (First Riddle : secret  ig:@beauty_beauty_sb)
@@ -109,28 +107,26 @@ Skill Sensei is a simple Soft Skill Test Fun Game. It is an innovative and engag
 <table>
 <tr >
 
-
 <td>
 <!-- react -->
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" /> </td>
 
 <td>
 <!-- nodeJS -->
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" /> </td>
+<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="nodejs" /> </td>
 
 <td>
 <!-- react -->
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" /> </td>
+<img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" alt="express" /> </td>
 
 <td>
 <!-- react -->
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" /> </td>
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongo" /> </td>
 
 <td>
 <!-- react -->
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" /> </td>
+<img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="netlify" /> </td>
 
 </tr>
-
 
 </table>

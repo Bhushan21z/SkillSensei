@@ -46,7 +46,7 @@ const LeaderBoard = () => {
       <Grid container xs={12} sx={{
         justifyContent: "center",
         alignItems: "center",
-        height: "auto",
+        height: "100vh",
         backgroundColor:"#000",
         paddingTop:"10vh"
       }} >
