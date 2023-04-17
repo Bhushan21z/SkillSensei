@@ -1,2 +1,2 @@
-# The GadgetLab backend
+# The Skill Sensei backend
 
