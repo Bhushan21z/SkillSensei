@@ -29,7 +29,12 @@ const LandingPage = () => {
         let loginparse = JSON.parse(login);
         const level="/level"+loginparse.level
         if(loginparse.level==6){
-          navigate("/scoreboard");
+          navigate("/scoreboard",
+          {
+              state: {
+                  email: loginparse.email
+              },
+          });
         }
         else{
           console.log(loginparse.level);

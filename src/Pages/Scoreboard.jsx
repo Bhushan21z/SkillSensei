@@ -11,28 +11,28 @@ const ScoreBoard = () => {
   console.log('Email', location.state.email);
   const email=location.state.email;
 
-  const [data, setData]= useState({});
+  // const [data, setData]= useState({});
 
-  const getData = async ()=>{
-    await axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/scoreboard", {email:email})
-              .then((response) => {
-                console.log(response);
-                setData(response.data.allData);
-              })
-              .catch((error) => {
-                console.log("Error");
-              });
-  }
-  useEffect(() => {
-    getData();
-  },data);
-  console.log(data);
+  // const getData = async ()=>{
+  //   await axios.post("https://good-tan-wasp-slip.cyclic.app/api/game/scoreboard", {email:email})
+  //             .then((response) => {
+  //               console.log(response);
+  //               setData(response.data.allData);
+  //             })
+  //             .catch((error) => {
+  //               console.log("Error");
+  //             });
+  // }
+  // useEffect(() => {
+  //   getData();
+  // },data);
+  // console.log(data);
 
 
   return (
     <div>
       <Navbar />
-     <Score email={email} data={data} />
+     <Score email={email} />
 
     </div>
   );
